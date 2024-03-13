@@ -1,0 +1,57 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: 60px; /* Adjust this value to match the height of your fixed navbar */
+}
+
+.navbar {
+    background-color: #fff; /* or any other color you prefer */
+    border-bottom: 1px solid #ccc; /* optional: for a slight separator */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed; /* This makes the navbar fixed on top */
+    top: 0; /* Position it at the top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it's above other elements */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a shadow for depth */
+}
+
+.logo {
+  display: flex; /* Using flexbox for alignment */
+  align-items: center; /* Aligns items vertically in the center */
+  font-size: 28px; /* Or whatever size you prefer */
+  font-weight: bold; /* If you want the text to be bold */
+}
+
+.logo-img {
+  /* Add some right margin if needed */
+  margin-right: 8px; 
+}
+
+.nav-links a,
+.contact-us a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #000; /* Change the color as needed */
+}
+
+.contact-us a {
+    background-color: #000; /* Button background */
+    color: #fff; /* Button text color */
+    padding: 10px 15px;
+    text-transform: uppercase; /* Optional style */
+}
+
+/* Add a media query for responsiveness */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide links on small screens, can replace with a mobile menu */
+    }
+}
+
+/* Clearfix for the fixed navbar */
+body {
+    padding-top: 70px; /* Height of the navbar to prevent content from hiding behind it */
+}
