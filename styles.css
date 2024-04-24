@@ -1,0 +1,705 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    scroll-padding-top: 60px; /* Adjust this value to match the height of your fixed navbar */
+}
+a:link {
+    color: #78AA3E; /* 默认链接颜色为红色 */
+}
+
+/* 已访问链接样式 */
+a:visited {
+    color: #61A1CD; /* 已访问链接颜色为绿色 */
+}
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex; /* Using flexbox for alignment */
+    align-items: center; /* Aligns items vertically in the center */
+    font-size: 28px; /* Or whatever size you prefer */
+    font-weight: bold; /* If you want the text to be bold */
+}
+
+.logo-img {
+    margin-right: 20px; /* Add some right margin if needed */
+}
+
+.nav-links a,
+.follow-us a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #000; /* Change the color as needed */
+}
+
+.follow-us a {
+	margin-right: 40px;
+    text-transform: uppercase; /* Optional style */
+	}
+.follow-us button {
+    background-color: #000; /* 黑色背景 */
+    color: #fff; /* 白色文字 */
+    border: 2px solid #fff; /* 白色边框 */
+    padding: 10px 20px; /* 内边距 */
+    border-radius: 5px; /* 边角圆滑 */
+    cursor: pointer; /* 鼠标悬停时显示光标 */
+    text-transform: uppercase; /* 文本大写 */
+    font-weight: bold; /* 文字加粗 */
+    margin-top: 0px; /* 顶部外边距 */
+    transition: all 0.3s ease; /* 过渡效果 */
+    text-align: center; /* 文本居中 */
+	font-size: 16px
+}
+
+.follow-us button:hover {
+    background-color: #fff; /* 鼠标悬停时背景色变为白色 */
+    color: #000; /* 鼠标悬停时文本色变为黑色 */
+    border: 2px solid #000; /* 鼠标悬停时边框色变为黑色 */
+}
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Adjusted for your design */
+    background: url('background.gif') no-repeat center center / cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.text-box {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    max-width: 50%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	border-radius: 10px; 
+}
+
+/* 悬浮框基本样式 */
+.contact-info {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px; /* 隐藏时显示的宽度 */
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.05); /* 暂时使用这个颜色，您可以根据需要更改 */
+    border-top-right-radius: 10px; /* 右上角圆角 */
+    border-bottom-right-radius: 10px; /* 右下角圆角 */
+    transition: width 0.3s ease; /* 过渡效果使展开动作平滑 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* 隐藏超出部分内容 */
+    z-index: 1000; /* 确保悬浮框在其他元素上方 */
+	border: 1px solid #838383;
+}
+
+/* 悬浮框内容样式 */
+.contact-info-content {
+    transition: opacity 0.3s ease; /* 过渡效果使内容淡入淡出平滑 */
+    opacity: 0; /* 初始状态内容不可见 */
+    max-height: 100%; /* 限制最大高度，防止内容溢出 */
+    padding-left: 20px; /* 在内容左侧保留空间，以便展开时文字不紧贴边缘 */
+}
+
+/* 悬浮框悬停样式 */
+.contact-info:hover {
+    width: 120px; /* 悬停时展开的宽度 */
+    border-top-right-radius: 10px; /* 右上角圆角 */
+    border-bottom-right-radius: 10px;/* 取消圆角使展开后的边缘是直角 */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 悬浮框内容在悬停时变为可见 */
+.contact-info:hover .contact-info-content {
+    opacity: 1; /* 悬停时内容逐渐可见 */
+}
+
+/* 可见部分样式 */
+.visible-part {
+    background-image: url('CSUN_logo.png');
+    background-size: contain; /* 缩放背景图以适应容器 */
+    background-position: center; /* 图片居中 */
+    background-repeat: no-repeat; /* 不重复显示背景图 */
+	background-color: rgba(0, 0, 0, 0.05);
+    width: 100%; /* 将可见部分的宽度设为100%，使其与悬浮框一致 */
+    height: 100%; /* 将可见部分的高度设为100%，使其与悬浮框一致 */
+    display: flex; /* 使用 flex 布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+
+/* ==========================================About-section====================================================*/
+.about-section {
+    display: flex;
+	text-align: center; 
+    padding: 100px;
+	padding-bottom: 0px;
+	border-radius: 10px; 
+}
+
+/* 包含左右两个分栏的主容器样式 */
+.about-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+	border-radius: 10px; 
+    /*padding-left: 20px;
+	padding-right: 20px;*/
+    box-sizing: border-box;
+    display: flex; /* 启用flexbox布局 */
+    align-items: flex-start; 
+    justify-content: space-between; /* 左右两个分栏之间有空间 */
+    align-items: center;  /* 在垂直方向上居中对齐 */
+   /*  border: 1px solid #000; */ /* 添加边框以可视化容器的布局，实际使用时可以移除 */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 左侧分栏容器 */
+.about-section .left-container {
+	flex: 2;
+    display: flex;
+    justify-content: center;
+	border-radius: 10px; 
+    margin-top: 0;
+    /*align-items: center;*/
+    /* border: 2px solid #000; 外边框样式 */
+    padding: 10px;
+}
+
+/* 右侧分栏容器 */
+.about-section .right-container {
+	flex: 1;
+    display: flex;
+    justify-content: center;
+	border-radius: 10px; 
+    margin-top: 0;
+    /*align-items: center;*/	
+    border: 0px solid #838383; /* 外边框样式 */
+    padding: 0px;
+}
+
+.about-image .team-photo {
+    max-width: 100%; /* Ensures the image is never larger than its container */
+    height: auto; /* Keeps the aspect ratio of the image */
+    display: block; /* Prevents inline default space below image */
+    margin-bottom: 0px; /* Optional spacing between the image and the text */
+	border-radius: 10px; 
+}
+
+@media (max-width: 768px) {
+    .about-section .container {
+        flex-direction: column; /* 在小屏幕上将分栏堆叠 */
+    }
+    
+    .about-section .left-container,
+    .about-section .right-container {
+        flex-basis: 100%; /* 在小屏幕上分栏占满整个容器宽度 */
+    }
+}
+.about-text {
+    flex-basis: 86%; /* 文字占比 */
+    padding-left: auto; /* 根据需要调整间距 */
+	text-align: justify;
+}
+.about-section .about-button {
+    text-align: center; /* 水平居中所有内联内容，包括按钮 */
+	margin-top: 34px;
+    margin-bottom: 4%;
+}
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+    .about-image, .about-text {
+        flex-basis: auto;
+    }
+    .about-text {
+        padding-left: 0;
+        padding-top: 20px;
+    }
+}
+
+.content {
+    max-width: 50%;
+}
+
+.about-section h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.about-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.about-section hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin-bottom: 1rem;
+}
+
+.about-section button {
+    background-color: #000; /* 黑色背景 */
+    color: #fff; /* 白色文字 */
+    border: 2px solid #fff; /* 白色边框 */
+    padding: 10px 20px; /* 内边距 */
+    border-radius: 5px; /* 边角圆滑 */
+    cursor: pointer; /* 鼠标悬停时显示光标 */
+    text-transform: uppercase; /* 文本大写 */
+    font-weight: bold; /* 文字加粗 */
+    margin-top: 10px; /* 顶部外边距 */
+    transition: all 0.3s ease; /* 过渡效果 */
+    text-align: center; /* 文本居中 */
+	font-size: 13px
+}
+
+.about-section button:hover {
+    background-color: #fff; /* 鼠标悬停时背景色变为白色 */
+    color: #000; /* 鼠标悬停时文本色变为黑色 */
+    border: 2px solid #000; /* 鼠标悬停时边框色变为黑色 */
+}
+.graphic {
+    width: 50%;
+    height: 300px;
+    background: url('path-to-graphic-element.jpg') no-repeat center center / cover;
+}
+
+@media (max-width: 768px) {
+    .nav-links, .about-section .graphic {
+        display: none;
+    }
+
+    .content, .text-box {
+        max-width: 100%;
+    }
+
+    .hero-section {
+        height: 50vh;
+    }
+}
+/* ==========================================Contact-section====================================================*/
+.contact-section {
+    padding: 100px;
+	padding-bottom: 0px;
+}
+
+/* 外部容器样式 */
+.contact-section .container {
+    display: flex; /* 启用flexbox布局 */
+    justify-content: space-between; /* 分栏之间平均分布空间 */
+    /* 如果需要，可以在这里设置容器的宽度和最大宽度 */
+    max-width: 1200px; /* 根据需要设置 */
+    margin: auto; /* 居中容器 */
+	padding: 0px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 容器阴影效果 */
+	border-radius: 10px; 
+}
+
+/* 分栏样式 */
+.contact-section .column {
+    flex: 1; /* 每个分栏分配相同的空间 */
+    text-align: center; /* 文本居中 */
+    padding: 0px; /* 适当的内边距 */
+    margin-right: 0px; /* 右侧添加外边距 */
+    border-left: 1px solid #ddd; /* 分栏之间的分隔线 */
+}
+
+.contact-section .column-text {
+    text-align: left;
+	margin: 26px
+}
+
+/* 调整第一个和最后一个分栏的边框以去除不必要的边线 */
+.contact-section .column:first-child {
+    border-left: none;
+	border-right: 1px solid #ddd; /* 分栏之间的分隔线 */
+}
+
+.contact-section .column:last-child {
+    border-right: none;
+}
+
+.contact-section .column-img {
+	flex: 1; /* 每个分栏分配相同的空间 */
+	text-align: center; /* 文本居中 */
+    margin: auto; /* 在容器内居中显示 */
+}
+.contact-section .column-img img{
+    width: 344px; /* 固定图片宽度为200像素 */
+    height: 207px; /* 固定图片高度为150像素 */
+    object-fit: contain; /* 确保图片完整显示 */
+    margin: auto; /* 在容器内居中显示 */
+}
+.contact-section .contact-info-1 {
+
+}
+/* ==========================================Professor-section====================================================*/
+.professor-section {
+	padding: 100px;
+	padding-bottom: 0px;
+}
+.professor-section .container {
+    /* border: 1px solid #ccc; */
+	display: flex; /* 启用flex布局 */
+    margin: auto;
+    max-width: 1200px;
+    text-align: center;
+	padding: 0px; 
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 容器阴影效果
+	border-radius: 10px;  */
+}
+.professor-section .left-container {
+    flex: 30%; /* 左栏占据1份比例，但实际上将是空的，可以用于调整右栏的位置 */
+    padding-left: 26px;
+	padding-right: 26px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+	border-radius: 10px; 
+	line-height: 2;
+	text-align: left;
+	max-height: auto;
+	margin-bottom: auto
+}
+.professor-section .left-container .button {
+	margin-top: 34px;
+	text-align: center;
+	margin-bottom: 34px;
+}
+.professor-section .left-container .button .button-link {
+    text-decoration: none; /* 移除链接的下划线 */
+    display: inline-block; /* 使链接适应按钮的大小 */
+}
+
+.professor-section .left-container .button .button-style {
+    background-color: #000; /* 黑色背景 */
+    color: #fff; /* 白色文本 */
+    border: 2px solid #fff; /* 白色边框 */
+    padding: 10px 25px; /* 顶部和底部10px，左右25px的内边距 */
+    font-size: 13px;/* 字体大小 */
+    text-transform: uppercase; /* 文本转换为大写 */
+    font-weight: bold; /* 字体加粗 */
+    border-radius: 5px; /* 边框圆角 */
+    transition: all 0.3s; /* 过渡效果 */
+    cursor: pointer; /* 鼠标悬停时显示手形光标 */
+	text-align: center;
+}
+
+.professor-section .left-container .button-style:hover {
+    background-color: #fff; /* 鼠标悬停时背景色变为白色 */
+    color: #000; /* 鼠标悬停时文本色变为黑色 */
+    border: 2px solid #000; /* 鼠标悬停时边框色变为黑色 */
+}
+.professor-section h2 {
+	text-align: center;
+}
+.professor-section .mid-container {
+    flex: 4%; /* 左栏占据1份比例，但实际上将是空的，可以用于调整右栏的位置 */
+}
+.professor-section-right{
+	cursor: pointer;
+	flex: 66%;
+    padding-left: 26px;
+	padding-right: 26px;
+    text-align: justify;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+	border-radius: 10px; 
+}
+
+.professor-section .education, .professor-section .research-focus {
+    margin-bottom: 20px;
+}
+
+.professor-section .hidden-text {
+    display: none;
+}
+
+.professor-section .show-more {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.professor-section img.profile-pic {
+    float: right;
+    margin-left: 20px;
+	border-radius: 10px; 
+}
+
+/* ==========================================Work Gallery-section====================================================*/
+.work-box {
+	padding-top: 100px;
+	padding-bottom: 0px;
+}
+.work-section {
+	width: 1200px;
+	overflow: hidden; /* 隐藏滚动条 */
+	position: relative; /* 为按钮定位 */
+	margin: auto;
+}
+.work-section .gallery {
+	width: 1200px; /* 固定宽度 */
+	height: auto; /* 固定高度 */
+	margin: auto; /* 居中显示 */
+	overflow: hidden; /* 隐藏滚动条 */
+	display: flex; /* 启用Flex布局 */
+	flex-wrap: nowrap; /* 不换行 */
+	scroll-snap-type: x mandatory; /* 滑动吸附效果 */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+	border-radius: 10px; 
+}
+
+.work-section .gallery .slide {
+	display: flex;
+}
+.work-section .gallery .slide .image-container {
+  flex: 1;
+  margin: 0 10px; /* 在图片之间添加间距 */
+}
+.work-section .gallery .slide .image-container:first-child  {
+  margin-left: 0 
+	
+}
+.work-section .gallery .slide .image-container:last-child  {
+  margin-right: 0
+}
+.work-section .gallery .slide .image-container img {
+  width: 100%; /* 保证图片宽度自适应容器宽度 */
+  height: auto; /* 保持图片原有比例 */
+  object-fit: cover; /* 调整图片的填充方式 */
+  border-radius: 10px; 
+}
+.work-section .gallery .slide img {
+	flex: 0 0 auto; /* 不改变图片宽度 */
+	height: auto; /* 固定图片高度 */
+	object-fit: cover; /* 调整图片的填充方式 */
+	scroll-snap-align: start;
+}
+.work-section button {
+  opacity: 0.5; 
+  position: absolute; /* 使按钮能够定位到相对于work-section的绝对位置 */
+  top: 50%; /* 将按钮垂直居中 */
+  transform: translateY(-50%); /* 偏移按钮自身高度的一半以确保完全居中 */
+  z-index: 10; /* 保证按钮在图片之上 */
+  background-color: #fff; /* 背景色 */
+  border: none; /* 无边框 */
+  padding: 12px; /* 内边距 */
+  cursor: pointer; /* 鼠标样式 */
+  font-size: 30px; /* 文字大小 */
+}
+.work-section button:hover {
+  opacity: 1; /* 完全不透明 */
+}
+.work-section .prev {
+  left: 0px; /* 左侧按钮的水平位置 */
+  border-top-right-radius: 10px; 
+  border-bottom-right-radius: 10px; 
+}
+
+.work-section .next {
+  right: 0px; /* 右侧按钮的水平位置 */
+  border-top-left-radius: 10px; 
+  border-bottom-left-radius: 10px; 
+}
+
+
+/* ==========================================Back to top-section====================================================*/
+.scroll-to-top {
+    position: fixed; /* 使用fixed定位，确保元素固定在视口的特定位置 */
+    bottom: 20px; /* 距离底部20px */
+    right: 20px; /* 距离右侧20px */
+    width: 50px; /* 宽度 */
+    height: 50px; /* 高度，与宽度相同形成圆形 */
+    background-color: rgba(0, 0, 0, 0); /* 背景颜色 */
+    color: #c3d696; /* 文字颜色 */
+    border-radius: 50%; /* 圆形边框 */
+    text-align: center; /* 文字居中 */
+    line-height: 50px; /* 调整文字垂直居中 */
+    cursor: pointer; /* 鼠标悬停时显示手形光标 */
+    font-size: 24px; /* 设置字体大小 */
+    display: none; /* 默认不显示，滚动后显示 */
+    z-index: 1000; /* 确保浮于其他内容之上 */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+.scroll-to-top:hover {
+	background-color: rgba(0, 0, 0, 0.05); /* 鼠标悬停时背景色变为白色 */
+    color: #c3d696; /* 鼠标悬停时文本色变为黑色 */
+    border: 2px solid #c3d696; /* 鼠标悬停时边框色变为黑色 */
+}
+
+
+/* ===================================Teams Historical Projects-section========================================*/
+
+#project-timeline {
+    padding: 50px 20px;
+    background-color: white;
+	}
+
+#project-timeline .container {
+    border: 0px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+	margin-top: 0px;
+    max-width: 1200px;
+    min-height: 500px;
+    text-align: center;
+    padding-bottom: 50px; 
+}
+
+.timeline-title {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.timeline-box {
+    display: flex;
+    flex-grow: 1;
+}
+
+.timeline-years {
+    width: 14%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* 垂直居中 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;  
+}
+
+.year {
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px 0;
+    border: 0px solid #ccc;
+    width: 60%;
+    text-align: center;
+    transition: background-color 0.1s, color 0.1s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;  
+}
+
+.year:hover,
+.year.active {
+    background-color: black;
+    color: #fff;
+}
+
+.timeline-details {
+    width: 84%;
+    display: flex;
+    /* justify-content: center; 水平居中 */
+    /* align-items: center; 垂直居中 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;  
+    margin-left: 2%; /* 添加左侧间距 */
+    padding-top: 4%;
+}
+
+.project-image {
+    width: 30%;
+    height: auto;
+	padding-top: 3%;
+    padding-right: 5%;
+}
+
+.project-image img {
+    max-width: 100%;  /* 限制图片最大宽度为容器宽度 */
+    max-height: 200px; /* 限制图片最大高度为200px */
+    height: auto;  /* 高度自动调整 */
+    object-fit: contain; /* 确保图片完整显示在设定的边界内 */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+    border-radius: 10px;  
+}	
+
+.project-description {
+    width: 60%;
+    text-align: justify;
+	padding-left: 5%
+}
+
+.project-title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+/* ==========================================Footer-section====================================================*/
+
+.site-footer {
+  text-align: center;
+  margin: auto;
+  max-height: 60px;  /* 调整最大高度以适应新增内容 */
+  padding: 2.5% 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 12px;
+  border-top: 1px solid #e4e4e4;
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  flex-direction: column; /* 改为垂直排列 */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  flex-direction: column; /* 改为垂直排列 */
+  /* align-items: center; 增加以垂直居中 */
+}
+
+.instagram-link a {
+  color: white; /* 设置文本颜色 */
+  text-decoration: none; /* 去掉下划线 */
+}
+
+.instagram-link a:hover {
+  text-decoration: underline; /* 鼠标悬停时下划线 */
+}
+
+.fab {
+  margin-right: 5px; /* 图标和文本之间的间隔 */
+}
+
+
+
+/* Clearfix for the fixed navbar */
+body {
+    padding-top: 70px; /* Height of the navbar to prevent content from hiding behind it */
+}
+
