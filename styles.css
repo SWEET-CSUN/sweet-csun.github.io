@@ -72,16 +72,29 @@ a:visited {
 
 @media (max-width: 768px) {
     .navbar {
+        padding: 3%;
+	max-width: 100%;
     }
 
-    .logo, .follow-us {
+    .logo{
+	padding: 0 0 0 -2%;
+	max-width: 48%;
+    }
+    .logo-img {
+        margin-right: 5%;
+    }
+     .follow-us {
+	margin-right: 3%;
+        max-width: 40%;
     }
 
     .nav-links {
-		margin:10px 0 0 0;
-		align-items: center;
-		padding:0px 0 0 10px;
-        width: 90%; /* 占满整行 */
+	max-width: 90%;
+	margin:0;
+	align-items: center;
+	padding:0px 0 0 0;
+	padding-left:4%;
+        width: 100%; /* 占满整行 */
         display: flex; /* 使用 flexbox 使链接水平排列 */
         justify-content: center; /* 中心对齐 */
         order: 2; /* 确保在第二行显示 */
