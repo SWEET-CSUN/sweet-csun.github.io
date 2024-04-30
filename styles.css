@@ -361,7 +361,8 @@ a:visited {
     }
 
     .about-section button {
-        width: 30%; /* 按钮宽度充满容器 */
+        width: 46%; /* 按钮宽度充满容器 */
+		padding: 5% 3%;
     }
 }
 
